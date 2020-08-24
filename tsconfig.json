@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "lib": [
+      "dom",
+      "es7"
+    ],
+    "target": "es2017",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "noImplicitAny": false,
+    "types": [
+      "node",
+      "@wdio/sync",
+      "@wdio/mocha-framework",
+      "@wdio/selenium-standalone-service"
+    ]
+  },
+  "include": [
+    "./src/**/*.ts",
+    "node_modules/webdriverio/webdriverio.d.ts",
+    "node_modules/@wdio/sync",
+    "node_modules/@wdio/mocha-framework"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compileOnSave": false
+}

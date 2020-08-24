@@ -1,0 +1,31 @@
+import { navigate } from '../../lib/utils';
+import GooglePage from '../../page-objects/Google.page';
+
+const SEARCH_QUERY = 'Nutrimprove';
+
+describe('Google Search', () => {
+  const page = new GooglePage();
+
+  before(() => {
+    navigate();
+  });
+
+  it('logo is displayed', () => {
+    expect(page.logo().isVisible()).toEqual(true);
+  });
+
+  it('search input is displayed', () => {
+    expect(page.searchInput().isVisible()).toEqual(true);
+  });
+
+  it(`returns results when 'Google Search' button is clicked`, () => {
+    page.searchInput().setValue(SEARCH_QUERY);
+    page.searchButton().click();
+    expect(page.resultStats().getText()).toMatch(/About .* results \(.* seconds\)/)
+  });
+
+  it(`all listed results contain query '${SEARCH_QUERY}'`, () => {
+    console.log(`=== google.search.spec.ts #28 === ( SEARCH_QUERY + 'r' ) =======>`, SEARCH_QUERY + 'r');
+    expect(page.resultsTitles().elementsContainText(SEARCH_QUERY + 'r'));
+  })
+});
