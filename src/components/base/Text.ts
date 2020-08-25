@@ -19,14 +19,6 @@ class Text extends Component {
     return this.getText().includes(text);
   }
 
-  public textEquals(text: string): boolean {
-    return this.getText() === text;
-  }
-
-  public textNotEquals(text: string): boolean {
-    return this.getText() !== text;
-  }
-
   public waitForRegex(regex: string, timeout: number = TIMEOUT): string {
     this.waitUntilVisible();
     // @ts-ignore
@@ -38,10 +30,10 @@ class Text extends Component {
     return this.getText();
   }
 
-  public waitForText(text: string, timeout: number = TIMEOUT): string {
+  public textEquals(text: string, timeout: number = TIMEOUT): string {
     this.waitUntilVisible();
     browser.waitUntil(
-      () => this.textEquals(text), {
+      () => this.getText() === text, {
         timeout,
         timeoutMsg: `expected text to equal '${text}', but was '${this.getText()}' after ${timeout}ms`,
       },
@@ -49,10 +41,10 @@ class Text extends Component {
     return this.getText();
   }
 
-  public waitForTextToNotEqual(text: string, timeout: number = TIMEOUT): string {
+  public textNotEquals(text: string, timeout: number = TIMEOUT): string {
     this.waitUntilVisible();
     browser.waitUntil(
-      () => this.textNotEquals(text),{
+      () => this.getText() !== text,{
         timeout,
         timeoutMsg: `expected text to be different from '${text}' after ${timeout}ms`}
     );
