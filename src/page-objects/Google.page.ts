@@ -11,7 +11,7 @@ class GooglePage {
   private searchButtonComponent: Button;
 
   public logo(): Image {
-    this.logoComponent = this.logoComponent || new Image('#hplogo');
+    this.logoComponent = this.logoComponent || new Image('img[alt=Google]');
     return this.logoComponent;
   }
 
@@ -21,7 +21,7 @@ class GooglePage {
   }
 
   public searchButton(): Button {
-    this.searchButtonComponent = this.searchButtonComponent || new Button('#tsf > div > div > div > center > input[name="btnK"]');
+    this.searchButtonComponent = this.searchButtonComponent || new Button('input[aria-label="Google Search"]');
     return this.searchButtonComponent;
   }
 
@@ -37,6 +37,10 @@ class GooglePage {
         isSeries: false,
       },
     );
+  }
+
+  public dialogAgreeButton(): WebdriverIO.Element {
+    return $('div=I agree');
   }
 }
 

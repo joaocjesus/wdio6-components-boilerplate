@@ -8,6 +8,7 @@ describe('Google Search', () => {
 
   before(() => {
     navigate();
+    page.dialogAgreeButton().click();
   });
 
   it('logo is displayed', () => {
@@ -20,12 +21,11 @@ describe('Google Search', () => {
 
   it(`returns results when 'Google Search' button is clicked`, () => {
     page.searchInput().setValue(SEARCH_QUERY);
-    page.searchButton().click();
+    browser.keys('Enter');
     expect(page.resultStats().getText()).toMatch(/About .* results \(.* seconds\)/)
   });
 
   it(`all listed results contain query '${SEARCH_QUERY}'`, () => {
-    console.log(`=== google.search.spec.ts #28 === ( SEARCH_QUERY + 'r' ) =======>`, SEARCH_QUERY + 'r');
-    expect(page.resultsTitles().elementsContainText(SEARCH_QUERY + 'r'));
+    expect(page.resultsTitles().elementsContainText(SEARCH_QUERY));
   })
 });
