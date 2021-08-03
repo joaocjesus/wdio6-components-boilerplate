@@ -4,7 +4,7 @@ const environments = require('../constants/environments');
 const driversConfig = {
   drivers: {
     chrome: {
-      version: '83.0.4103.39'
+      version: '92.0.4515.43'
     },
     firefox: {
       // Geckodriver version
