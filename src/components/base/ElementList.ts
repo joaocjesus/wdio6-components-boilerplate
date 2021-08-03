@@ -42,6 +42,10 @@ class ElementList extends WebElements {
     const components = this.components({ refetch, startAt: index, stopAt: index });
     return components[0];
   }
+
+  public clickIndex(index: number) {
+    this.getComponent(index).click();
+  }
 }
 
 export default ElementList;
