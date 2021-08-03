@@ -38,10 +38,6 @@ class GooglePage {
       },
     );
   }
-
-  public dialogAgreeButton(): WebdriverIO.Element {
-    return $('div=I agree');
-  }
 }
 
 export default GooglePage;

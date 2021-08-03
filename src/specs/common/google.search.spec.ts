@@ -8,11 +8,11 @@ describe('Google Search', () => {
 
   before(() => {
     navigate();
-    page.dialogAgreeButton().click();
   });
 
   it('logo is displayed', () => {
-    expect(page.logo().isVisible()).toEqual(true);
+    browser.pause(3000);
+    expect(page.logo().isVisibleCurrently()).toEqual(true);
   });
 
   it('search input is displayed', () => {
