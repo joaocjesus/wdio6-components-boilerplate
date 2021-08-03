@@ -1598,9 +1598,9 @@ iedriver@^3.14.2:
     request "^2.88.0"
     rimraf "~2.0.2"
 
-"iedriver@git+https://github.com/barretts/node-iedriver.git":
-  version "3.14.2"
-  resolved "git+https://github.com/barretts/node-iedriver.git#085b6880a7da2b182004aa5c138efcdf16143c6c"
+"iedriver@https://github.com/barretts/node-iedriver":
+  version "3.150.1"
+  resolved "https://github.com/barretts/node-iedriver#dd3ab1a8aab50fa77aaf0a541c9c8c99ff1ac270"
   dependencies:
     extract-zip "1.7.0"
     kew "~0.1.7"
